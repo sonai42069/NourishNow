@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2023 at 06:44 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Aug 29, 2024 at 03:37 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.1.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -172,7 +172,15 @@ INSERT INTO `order_detail` (`id`, `user_id`, `order_id`, `product_id`, `qty`, `p
 (54, 1502199874, 1361002268, 23, 1, 150, '2023-06-30 10:47:00'),
 (55, 1502199874, 1205564665, 17, 1, 970, '2023-06-30 10:49:13'),
 (56, 904895891, 578724866, 16, 1, 840, '2023-06-30 15:09:03'),
-(57, 904895891, 578724866, 31, 4, 188, '2023-06-30 15:09:03');
+(57, 904895891, 578724866, 31, 4, 188, '2023-06-30 15:09:03'),
+(58, 766916802, 1579879622, 21, 1, 245, '2024-03-03 13:04:08'),
+(59, 766916802, 1579879622, 22, 1, 125, '2024-03-03 13:04:08'),
+(60, 766916802, 1013964819, 21, 1, 245, '2024-07-28 17:05:28'),
+(61, 766916802, 1013964819, 124, 1, 37.6, '2024-07-28 17:05:28'),
+(62, 766916802, 1013964819, 17, 1, 970, '2024-07-28 17:05:28'),
+(63, 766916802, 262033367, 92, 1, 1299, '2024-07-28 17:07:54'),
+(64, 766916802, 262033367, 103, 2, 102.4, '2024-07-28 17:07:54'),
+(65, 1292138937, 506934265, 17, 1, 970, '2024-08-29 11:18:08');
 
 -- --------------------------------------------------------
 
@@ -209,7 +217,11 @@ INSERT INTO `order_document` (`id`, `user_id`, `address`, `state`, `pincode`, `p
 (0, 904895891, 'kalna', 'west ', 712501, 'COD', 2130, 'pending', 'pending', 449334784, '2023-06-27 22:49:18', 920953107),
 (0, 904895891, 'kalyani', 'west ', 712501, 'COD', 5430, 'pending', 'pending', 587731237, '2023-06-28 22:03:42', 1394874173),
 (0, 1502199874, 'kalna', 'west bengal', 741404, 'COD', 970, 'pending', 'pending', 1379438432, '2023-06-30 10:43:02', 1368349529),
-(0, 904895891, 'chandernagore ', 'west bengal', 712501, 'COD', 1028, 'pending', 'pending', 1368109067, '2023-06-30 15:09:51', 578724866);
+(0, 904895891, 'chandernagore ', 'west bengal', 712501, 'COD', 1028, 'pending', 'pending', 1368109067, '2023-06-30 15:09:51', 578724866),
+(0, 766916802, 'HALDERPARA,NRISINGHAPUR', 'West Bengal', 741404, 'COD', 370, 'pending', 'pending', 156246939, '2024-03-03 13:04:18', 1579879622),
+(0, 766916802, 'HALDERPARA,NRISINGHAPUR', 'West Bengal', 741404, 'COD', 1252.6, 'pending', 'pending', 664809080, '2024-07-28 17:05:31', 1013964819),
+(0, 766916802, 'Pondicherry University,Kalapet,Kamban Hostel', 'Pondicherry (UT)', 705014, 'COD', 1401.4, 'pending', 'pending', 140452574, '2024-07-28 17:08:12', 262033367),
+(0, 1292138937, 'HALDERPARA,NRISINGHAPUR', 'West Bengal', 741404, 'COD', 970, 'pending', 'pending', 1356544897, '2024-08-29 11:18:13', 506934265);
 
 -- --------------------------------------------------------
 
@@ -264,7 +276,15 @@ INSERT INTO `order_status` (`id`, `name`, `order_id`, `user_id`, `added_on`) VAL
 (54, 'Processing', 1361002268, 1502199874, '2023-06-30 10:47:00'),
 (55, 'Processing', 1205564665, 1502199874, '2023-06-30 10:49:13'),
 (56, 'Processing', 578724866, 904895891, '2023-06-30 15:09:03'),
-(57, 'Processing', 578724866, 904895891, '2023-06-30 15:09:03');
+(57, 'Processing', 578724866, 904895891, '2023-06-30 15:09:03'),
+(58, 'Processing', 1579879622, 766916802, '2024-03-03 13:04:08'),
+(59, 'Processing', 1579879622, 766916802, '2024-03-03 13:04:08'),
+(60, 'Processing', 1013964819, 766916802, '2024-07-28 17:05:28'),
+(61, 'Processing', 1013964819, 766916802, '2024-07-28 17:05:28'),
+(62, 'Processing', 1013964819, 766916802, '2024-07-28 17:05:28'),
+(63, 'Processing', 262033367, 766916802, '2024-07-28 17:07:54'),
+(64, 'Processing', 262033367, 766916802, '2024-07-28 17:07:54'),
+(65, 'Processing', 506934265, 1292138937, '2024-08-29 11:18:08');
 
 -- --------------------------------------------------------
 
@@ -300,11 +320,11 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`id`, `categories_id`, `categories_name`, `sub_categories_id`, `sub_categories`, `name`, `mrp`, `price`, `qty`, `image`, `short_desc`, `description`, `best_seller`, `meta_title`, `meta_desc`, `meta_keyword`, `added_by`, `status`) VALUES
 (15, 8, '', 5, '', 'India Gate Basmati Rice Super 5kg', 1080, 679, 0, '605022890_WhatsApp Image 2023-04-14 at 8.09.04 PM.jpeg', 'India Gate\r\n90% positive ratings from 50K+ customers\r\n50K+ recent orders from this brand\r\n7+ years on Amazon', 'Brand	India Gate\r\nDiet Type	Vegetarian\r\nUnits	5000.0 gram\r\nWeight	5000 Grams\r\nVariety	Basmati Rice', 1, 'Basmati Rice 5kg', 'Basmati Rice 5kg', 'Basmati Rice 5kg', 1, 1),
 (16, 8, '', 5, '', 'India Gate Basmati Rice Everyday 5 kg', 1100, 840, 0, '256426447_71W1XCVDlML._SL1500_.jpg', 'India Gate\\r\\n90% positive ratings from 50K+ customers\\r\\n50K+ recent orders from this brand\\r\\n7+ years on Amazon', 'Brand	India Gate\r\nDiet Type	Vegetarian\r\nUnits	5000.0 gram\r\nWeight	5000 Grams\r\nVariety	Basmati Rice', 1, 'India Gate Basmati Rice Everyday 5 kg', 'India Gate Basmati Rice Everyday 5 kg', 'India Gate Basmati Rice Everyday 5 kg', 1, 1),
-(17, 8, '', 5, '', 'India Gate Basmati Rice Daily Premium 5 kg', 1049, 970, 13, '310809884_71Wpn-DmYVL._SL1500_.jpg', '90% positive ratings from 50K+ customers\r\n50K+ recent orders from this brand\r\n7+ years on Amazon', 'Brand	India Gate\r\nDiet Type	Vegetarian\r\nUnits	5000.0 gram\r\nWeight	5000 Grams\r\nVariety	Basmati Rice', 1, 'India Gate Basmati Rice Daily Premium 5 kg', 'India Gate Basmati Rice Daily Premium 5 kg', 'India Gate Basmati Rice Daily Premium 5 kg', 1, 1),
+(17, 8, '', 5, '', 'India Gate Basmati Rice Daily Premium 5 kg', 1049, 970, 11, '310809884_71Wpn-DmYVL._SL1500_.jpg', '90% positive ratings from 50K+ customers\r\n50K+ recent orders from this brand\r\n7+ years on Amazon', 'Brand	India Gate\r\nDiet Type	Vegetarian\r\nUnits	5000.0 gram\r\nWeight	5000 Grams\r\nVariety	Basmati Rice', 1, 'India Gate Basmati Rice Daily Premium 5 kg', 'India Gate Basmati Rice Daily Premium 5 kg', 'India Gate Basmati Rice Daily Premium 5 kg', 1, 1),
 (18, 8, 'Rice', 5, 'Basmati Rice', 'Daawat Rozana Super Basmati Rice 5 Kg', 486, 359, 20, '636574461_810jp1zceeL._SL1500_.jpg', 'Rozana is above medium length product\r\nOriginal basmati nourished by snow fed rivers of great Himalayas\r\nCountry of Origin: India\r\nMaterial Features: Vegetarian; Item Form: Grain', 'Brand	DAAWAT\r\nNumber of Items	1\r\nUnits	5000.0 gram\r\nWeight	5000 Grams\r\nPackage Information	Bag', 1, 'Daawat Rozana Super Basmati Rice 5 Kg', 'Daawat  Super Basmati Rice 5 Kg', 'Daawat Rozana Super Basmati Rice 5 Kg', 1, 1),
 (20, 12, '', 24, '', 'Aashirvaad Atta 5 kg', 342, 304, 20, '333127781_91SWDnldaaL._SL1500_.jpg', 'Brand	Aashirvaad\r\nWeight	5 Kilograms\r\nSpecialty	Vegetarian\r\nDiet Type	Vegetarian\r\nPackage Weight	5.05 Kilograms\r\nForm	Raw\r\nNumber of Items	1\r\nUnits	5000 gram', 'Aashirvaad Atta with Multigrains is high in fibre which aids in digestion\r\n3 rotis made from Multigrain Atta fulfill 35% of your daily fibre requirement\r\nRotis made from Aashirvaad Atta with Multigrains taste just like your regular atta\r\nAashirvaad Atta with Multigrains is a blend of 6 natural grains – wheat, maize, soya, channa, oats, psyllium husk\r\nFrom India’s No. 1 Atta brand, Aashirvaad Atta with Multigrains is made with love in India with the grains sourced from the fields across the country', 1, 'Aashirvaad Atta 5 kg', 'Aashirvaad Atta 5 kg', 'Aashirvaad Atta 5 kg', 1, 1),
-(21, 12, '', 25, '', 'Fortune Chakki Fresh Atta 5kg', 250, 245, 19, '162990101_61AOiVfvtBL.jpg', 'Brand	FORTUNE\r\nWeight	230 Grams\r\nAllergen Information	Fat-Free\r\nSpecialty	Vegetarian\r\nDiet Type	Vegetarian\r\nPackage Weight	5.2 Kilograms\r\nForm	Raw\r\nNumber of Items	1\r\nUnits	5000.0 gram', 'Made with superior wheat blend\r\nTraditional Chakki Process\r\nAbsorbs water more efficiently to make your rotis soft and fluffy\r\nIntensive wheat cleaning process and hygienic packaging\r\nHigh perfection in granulation\r\nAbsolutely pristine and untouched by hand\r\nNo preservatives added\r\nAssurance of consistent quality\r\nMade with superior wheat blend\r\nTraditional Chakki Process\r\nAbsorbs water more efficiently to make your rotis soft and fluffy\r\nIntensive wheat cleaning process and hygienic packaging\r\nHigh perfection in granulation\r\nAbsolutely pristine and untouched by hand\r\nNo preservatives added\r\nAssurance of consistent quality\r\nShow Less', 1, 'Fortune Chakki Fresh Atta 5kg', 'Fortune Chakki Fresh Atta 5kg', 'Fortune Chakki Fresh Atta 5kg', 1, 1),
-(22, 10, '', 12, '', 'Fortune Soyabean Oil 1L', 150, 125, 20, '150448753_51GyUUKe-0L.jpg', 'Brand	FORTUNE\r\nFlavour	Soybean\r\nNet Content Volume	1 Litres, 1000 Millilitres\r\nItem Package Quantity	1\r\nForm	Liquid\r\nSpecialty	Vegetarian\r\nRecommended Uses For Product	Skin Care\r\nVolume	1 Litres\r\nWeight	910 Grams\r\nMaterial Feature	Vegetarian', 'Light, odourless and healthy oil\r\nCountry of Origin: India\r\nMaterial Features: Vegetarian;Item Form: Liquid;Flavor Name: Soybean\r\nform_factor:liquid | material_features:vegetarian\r\nallergen_information:allergen_free | ingredients:Soybean, Rich in Omega 3\r\nitem_form:liquid | flavor_name:soybean', 1, 'Fortune Soyabean Oil 1L', 'Fortune Soyabean Oil 1L', 'Fortune Soyabean Oil 1L', 1, 1),
+(21, 12, '', 25, '', 'Fortune Chakki Fresh Atta 5kg', 250, 245, 17, '162990101_61AOiVfvtBL.jpg', 'Brand	FORTUNE\r\nWeight	230 Grams\r\nAllergen Information	Fat-Free\r\nSpecialty	Vegetarian\r\nDiet Type	Vegetarian\r\nPackage Weight	5.2 Kilograms\r\nForm	Raw\r\nNumber of Items	1\r\nUnits	5000.0 gram', 'Made with superior wheat blend\r\nTraditional Chakki Process\r\nAbsorbs water more efficiently to make your rotis soft and fluffy\r\nIntensive wheat cleaning process and hygienic packaging\r\nHigh perfection in granulation\r\nAbsolutely pristine and untouched by hand\r\nNo preservatives added\r\nAssurance of consistent quality\r\nMade with superior wheat blend\r\nTraditional Chakki Process\r\nAbsorbs water more efficiently to make your rotis soft and fluffy\r\nIntensive wheat cleaning process and hygienic packaging\r\nHigh perfection in granulation\r\nAbsolutely pristine and untouched by hand\r\nNo preservatives added\r\nAssurance of consistent quality\r\nShow Less', 1, 'Fortune Chakki Fresh Atta 5kg', 'Fortune Chakki Fresh Atta 5kg', 'Fortune Chakki Fresh Atta 5kg', 1, 1),
+(22, 10, '', 12, '', 'Fortune Soyabean Oil 1L', 150, 125, 19, '150448753_51GyUUKe-0L.jpg', 'Brand	FORTUNE\r\nFlavour	Soybean\r\nNet Content Volume	1 Litres, 1000 Millilitres\r\nItem Package Quantity	1\r\nForm	Liquid\r\nSpecialty	Vegetarian\r\nRecommended Uses For Product	Skin Care\r\nVolume	1 Litres\r\nWeight	910 Grams\r\nMaterial Feature	Vegetarian', 'Light, odourless and healthy oil\r\nCountry of Origin: India\r\nMaterial Features: Vegetarian;Item Form: Liquid;Flavor Name: Soybean\r\nform_factor:liquid | material_features:vegetarian\r\nallergen_information:allergen_free | ingredients:Soybean, Rich in Omega 3\r\nitem_form:liquid | flavor_name:soybean', 1, 'Fortune Soyabean Oil 1L', 'Fortune Soyabean Oil 1L', 'Fortune Soyabean Oil 1L', 1, 1),
 (23, 10, 'Oil', 13, 'Mustard Oil', 'Fortune Premium Kachi Ghani Pure Mustard Oil 1L', 150, 150, 11, '994638898_41lBuao0+bL.jpg', 'Brand	FORTUNE\r\nFlavour	Mustard - Bottle\r\nNet Content Volume	1 Litres, 1000 Millilitres\r\nSpecial Feature	Cold Pressed\r\nItem Package Quantity	1\r\nForm	Oil\r\nSpecialty	Suitable for vegeterians\r\nRecommended Uses For Product	Cooking\r\nVolume	1 Litres\r\nWeight	910 Grams', 'Made from Cold Pressed (Kachi Ghani) Technology using Finest Mustard Seeds - Rich in Omega 3 & 6 that boost Immunity\r\nRich in Vitamins A,E and Beta Carotene\r\nNaturally Cholesterol Free\r\nHigh in PUFA (Poly Unsaturated Fatty Acids)\r\nHigh Pungency and Strong Aroma - Mustard Oil with Long Shelf Life', 1, 'Fortune Premium Kachi Ghani Pure Mustard Oil 1L', 'NA', 'NA', 1, 1),
 (24, 10, '', 14, '', 'Jivo Olive Oil 1L', 749, 399, 20, '806031253_61WeDb2C0tL._SL1500_.jpg', 'Brand	JIVO\r\nDiet Type	Vegetarian\r\nFlavour	Neutral\r\nNet Content Volume	1 Litres, 1000 Millilitres\r\nMelting Temperature	100 Degrees Celsius\r\nLiquid Volume	1 Litres\r\nItem Package Quantity	1\r\nForm	Daily Consumables\r\nSpecialty	Preservatives Free\r\nRecommended Uses For Product', 'Gluten-Free\r\nLow-Cholesterol Content\r\nGood for Scalp Treatment\r\nPomace Oil keeps its nutrients when it heats, keeping food healthy and ideal for Cooking\r\nUsing pomace oil as massaging oil can gives a healthy and smooth skin\r\nHas light flavour & aroma, ensures minimal change in the taste of preparation.\r\nVitamin K in Pomace improves bone density and strength\r\nImproves bone density and strength\r\nHelps in faster healing\r\nStorage Instruction: Store in a cool, dry & hygienic place, away from direct heat & light.', 1, 'Jivo Olive Oil 1L', 'Jivo Olive Oil 1L', 'Jivo Olive Oil 1L', 1, 1),
 (25, 11, '', 15, '', 'Chandramukhi Potato 1Kg', 34, 27, 20, '916626487_chandramukhi aloo.jpg', 'Fresh Product\r\nDirect from field\r\nNatural Product', 'Fresh Product\r\nDirect from field\r\nNatural Product', 1, 'Chandramukhi Potato 1 kg', 'NA', 'NA', 1, 1),
@@ -369,7 +389,7 @@ INSERT INTO `product` (`id`, `categories_id`, `categories_name`, `sub_categories
 INSERT INTO `product` (`id`, `categories_id`, `categories_name`, `sub_categories_id`, `sub_categories`, `name`, `mrp`, `price`, `qty`, `image`, `short_desc`, `description`, `best_seller`, `meta_title`, `meta_desc`, `meta_keyword`, `added_by`, `status`) VALUES
 (90, 8, '', 30, '', 'More Choice Minikate Rice Loose, 1 kg', 120, 118, 25, '435916857_More Choice Minikate Rice Loose, 1 kg.jpg', 'This is a Vegetarian product.\r\nAromatic rice and is highly nutritious with an excellent taste\r\nA staple rice for Bengali as it has an irresistible taste and flavour\r\nNo added preservatives\r\nNo added artificial flavours', 'NA', 1, 'More Choice Minikate Rice Loose, 1 kg', 'NA', 'NA', 1, 1),
 (91, 8, '', 30, '', 'Dainik Premium Minikit Rice 5 kg', 600, 500, 25, '767677359_Dainik Premium Minikit Rice 5 kg.jpg', 'Brand	Dainik\r\nDiet Type	Vegetarian\r\nUnits	1.00 count\r\nItem Package Quantity	1\r\nVariety	Parboiled Rice', 'Premium quality rice\r\nCarefully chosen and naturally grown\r\nCarefully nurtured, grown, and processed\r\nParboiled Rice (Miniket Rice) (Unpolished) 5 Kg', 1, 'Dainik Premium Minikit Rice 5 kg', 'NA', 'NA', 1, 1),
-(92, 8, 'Rice', 30, 'Miniket Rice', 'HUSKING(DHEKI CHATA) MINIKET RICE - 10 KG', 3000, 1299, 25, '791870664_HUSKING(DHEKI CHATA) MINIKET RICE - 10 KG.jpg', 'Brand	Ksetrikagrha\r\nDiet Type	Non Vegetarian, Vegetarian\r\nUnits	1.00 count\r\nItem Package Quantity	1\r\nVariety	Husking,Husking Rice', 'HUSKING RICE\r\nHUSKING MINIKET RICE\r\nDHEKI CHATA RICE\r\nDHEKI CHATA MINIKET RICE', 1, 'HUSKING MINIKET RICE - 10 KG', 'NA', 'NA', 1, 1),
+(92, 8, 'Rice', 30, 'Miniket Rice', 'HUSKING(DHEKI CHATA) MINIKET RICE - 10 KG', 3000, 1299, 24, '791870664_HUSKING(DHEKI CHATA) MINIKET RICE - 10 KG.jpg', 'Brand	Ksetrikagrha\r\nDiet Type	Non Vegetarian, Vegetarian\r\nUnits	1.00 count\r\nItem Package Quantity	1\r\nVariety	Husking,Husking Rice', 'HUSKING RICE\r\nHUSKING MINIKET RICE\r\nDHEKI CHATA RICE\r\nDHEKI CHATA MINIKET RICE', 1, 'HUSKING MINIKET RICE - 10 KG', 'NA', 'NA', 1, 1),
 (93, 8, '', 30, '', 'Miniket Rice - 3kg', 550, 499, 25, '160221536_Miniket Rice - 3kg.jpg', 'Brand	bheto bangali\r\nDiet Type	Vegetarian\r\nUnits	3000.0 gram\r\nWeight	3 Kilograms\r\nPackage Information	Pouch', 'Premium, aromatic, pearly white and extra long grain rice. Perfect for daily consumption.\r\nBenefits of Parboiled Rice:-\r\nPrevents cancer – Being rich in antioxidants and phytonutrients, it has a high content of anthocyanins which has been linked to reducing inflammation and preventing cancer.\r\nHelps in Weight Loss - 50% less Carbohydrates than white rice. Its low glycemic index helps in Weight Loss and makes it ideal for diabetics and sugar controlled diet.\r\nProvides essential mineral - vitamins B6, B3, B1 creates neurotransmitters & hormones. Ca, Mn, Fe, K, Zn. Which helps to regulate DNA & improves immunity\r\nReduces risk of heart attacks - Being rich in Manganese it helps lower blood pressure.\r\nSupports rapid body growth - Folate B9 vitamin is essential for rapid growth such as during pregnancy, infancy, and adolescence', 1, 'Miniket Rice - 3kg', 'NA', 'NA', 1, 1),
 (94, 8, 'Rice', 30, 'Miniket Rice', 'Ganbak Premium Parboiled MINIKET Rice -(Best for Daily use- Usna Rice/Sidho Rice)-Direct brought from District of West Bengal-5kg', 999, 799, 24, '528705901_Ganbak Premium Parboiled MINIKET Rice.jpg', 'Brand	Ganbak\r\nUnits	4999.0 gram\r\nWeight	4999 Grams\r\nItem Package Quantity	1\r\nForm	Grain', 'Sidho MINIKET Rice from bengal .It is a short white grain used for daily consumption + taste with Sidho rice flavour.\r\nIt is highly non-sticky & best gifted to Sidho rice lovers in your family.\r\nThis rice is from a renowned high quality rice mill in Burdwan . It is cooked by only few boilings ,depends upon prior soaking.\r\nBeing a natural product, there are minor variations in aroma depending on the farm and season\r\nWe guarantee you for taste and its price best given by us .\r\nPeople who gives you this rice in cheaper rates are definately compromising with its quality.', 1, 'Ganbak Premium Parboiled MINIKET Rice -5kg', 'NA', 'NA', 1, 1),
 (95, 8, 'Rice', 5, 'Basmati Rice', 'Fortune Biryani Special Basmati Rice, Extra long grain basmati rice, 5 KG', 999, 990, 25, '645600282_Fortune Biryani Special Basmati Rice, Extra long grain basmati rice, 5 KG.jpg', 'Brand	FORTUNE\r\nUnits	5000.0 gram\r\nWeight	5000 Grams\r\nPackage Information	Bag\r\nItem Package Quantity	1', 'Premium basmati rice.\r\nThe extra-long grain and Non-Sticky texture make this rice ideal for all types of Biryani.\r\nAfter cooking rice elongate over 2 times and become flavorful and taste.\r\nPristine white grains.\r\nCommonly searched keywords: Rice, Basmati rice, Biryani, Biryani Rice, Quality Rice, Special Rice, real Basmati, rice 5 kg pantry\r\nPremium basmati rice.\r\nThe extra-long grain and Non-Sticky texture make this rice ideal for all types of Biryani\r\nAfter cooking rice elongate over 2 times and become flavorful and taste\r\nPristine white grains\r\n[Commonly searched keywords: Rice, Basmati rice, Biryani, Biryani Rice, Quality Rice, Special Rice, real Basmati, rice 1 kg pantry]', 1, 'Fortune Biryani , Extra long grain Special Basmati Rice, 5 KG', 'NA', 'NA', 1, 1),
@@ -380,7 +400,7 @@ INSERT INTO `product` (`id`, `categories_id`, `categories_name`, `sub_categories
 (100, 8, '', 31, '', 'MonBangla Premium Banskathi Rice - 5KG', 880, 849, 25, '306203033_MonBangla Premium Banskathi Rice - 5KG.jpg', 'Brand	MonBangla\r\nDiet Type	Vegetarian\r\nNumber of Items	1\r\nUnits	5000 gram\r\nWeight	5 Kilograms', 'HYGIENICALLY PACKED WITH ALL EMPLOYEES WEARING MASK AND GLOVES\r\nSOCIAL DISTANCING NORMS AS OUTLINED BY GOI ARE FOLLOWED AT OUR DELIVERY CENTER\r\nPure vegetarian. Fssai certified premium quality bengali staples for your everyday meals\r\nPacked in food graded bags to retain quality\r\nGrown in organic environment without use of pesticides', 1, 'MonBangla Premium Banskathi Rice - 5KG', 'NA', 'NA', 1, 1),
 (101, 8, '', 31, '', 'Dainik Premium Banskathi Rice 5 kg', 600, 545, 25, '590135598_Dainik Premium Banskathi Rice 5 kg.jpg', 'Brand	Dainik\r\nDiet Type	Vegetarian\r\nUnits	1.00 count\r\nItem Package Quantity	1\r\nMaterial Feature	Premium quality banskathi rice', 'A premium quality rice for daily consumption\r\nCarefully chosen and naturally grown\r\nBaskathi rice 5 kg\r\nImproves overall skin and cardiovascular health', 1, 'Dainik Premium Banskathi Rice 5 kg', 'NA', 'NA', 1, 1),
 (102, 8, '', 31, '', 'Sera Bangla Banskathi Rice - 2KG (Pack of 2)', 360, 330, 25, '533806546_Sera Bangla Banskathi Rice - 2KG (Pack of 2).jpg', 'Brand	Sera Bangla\r\nUnits	2000.0 gram\r\nItem Package Quantity	1\r\nSpecialty	suitable for vegetarians\r\nMaterial Feature	Vegetarian', 'NA', 1, 'Sera Bangla Banskathi Rice - 2KG (Pack of 2)', 'NA', 'NA', 1, 1),
-(103, 11, '', 32, '', 'Fresh Lemon, 250 g', 64, 51.2, 25, '158072212_Fresh Lemon, 250 g.jpg', 'Weight	0.2 Kilograms\r\nBrand	Fresh\r\nSpecialty	suitable for vegeterians\r\nPackage Weight	0.25 Kilograms\r\nTemperature Condition	Fresh\r\nForm	Whole\r\nNumber of Items	1\r\nUnits	250.0 gram', 'Fresh and juicy\r\nGood source of Vitamin B6, C, Iron, Potassium and Calcium\r\nCan be used to make to juice, tea, pickle or to add taste to dishes\r\nStore in a cool, dry place away from sunlight\r\ningredients:fresh lemons\r\nitem_form:slices', 1, 'Fresh Lemon, 250 g', 'NA', 'NA', 1, 1),
+(103, 11, '', 32, '', 'Fresh Lemon, 250 g', 64, 51.2, 23, '158072212_Fresh Lemon, 250 g.jpg', 'Weight	0.2 Kilograms\r\nBrand	Fresh\r\nSpecialty	suitable for vegeterians\r\nPackage Weight	0.25 Kilograms\r\nTemperature Condition	Fresh\r\nForm	Whole\r\nNumber of Items	1\r\nUnits	250.0 gram', 'Fresh and juicy\r\nGood source of Vitamin B6, C, Iron, Potassium and Calcium\r\nCan be used to make to juice, tea, pickle or to add taste to dishes\r\nStore in a cool, dry place away from sunlight\r\ningredients:fresh lemons\r\nitem_form:slices', 1, 'Fresh Lemon, 250 g', 'NA', 'NA', 1, 1),
 (104, 11, '', 32, '', 'Fresh Lemon, 250g & Fresh Chilli, Green, 250g & Fresh Coriander - Fresh, 100g', 108, 86, 25, '118986445_Fresh Lemon, 250g & Fresh Chilli, Green, 250g & Fresh Coriander - Fresh, 100g.jpg', 'Brand	Fresh\r\nVariety	Lemon\r\nUnits	1 count\r\nNumber of Items	1\r\nWeight	600 Grams', 'Fresh and juicy\r\nGood source of Vitamin B6, C, Iron, Potassium and Calcium\r\nCan be used to make to juice, tea, pickle or to add taste to dishes\r\nAdds Spice to the dish\r\nGood source of Vitamin B6, C, Iron and Potassium.\r\nUsed in curries, soups, and other dishes and can be used to make pickle\r\nCommonly known as Dhania\r\nGood source of Vitamin C, K, Iron, Manganes and Dietary Fiber.\r\nCan be used to in curries, soups or for garnishing', 1, 'Fresh Lemon, 250g & Fresh Chilli, Green, 250g & Fresh Coriander - Fresh, 100g', 'NA', 'NA', 1, 1),
 (105, 11, '', 17, '', 'Fresh Onion, 1kg', 37, 23, 25, '878046566_Fresh Onion, 1kg.jpg', 'Diet Type	Vegetarian\r\nForm	Whole\r\nBrand	Fresh\r\nWeight	1 Kilograms\r\nNumber of Items	1', 'About this item\r\nRich in antioxidants\r\nGood source of manganese, copper, Vitamin B6, Vitamin C and Dietary Fibers\r\nCan be used in curries, snacks and salads\r\nStore at room temperature, away from direct sunlight\r\nmaterial_features:vegetarian\r\nitem_form:whole\r\ningredients:fresh onions', 1, 'Fresh Onion, 1kg', 'NA', 'NA', 1, 1),
 (106, 11, '', 17, '', 'Fresh Onions - Sambar, 1kg', 33, 26.4, 25, '880963036_Fresh Onions - Sambar, 1kg.jpg', 'Diet Type	Vegetarian\r\nForm	Whole\r\nBrand	Fresh\r\nWeight	1 Kilograms\r\nNumber of Items	1', 'Rich in antioxidants\r\nSambar Onions contain high measures of fiber and flavonoids\r\nCan be used in curries, snacks and salads\r\nStore at room temperature, away from direct sunlight\r\nmaterial_features:vegetarian', 1, 'Fresh Onions - Sambar, 1kg', 'NA', 'NA', 1, 1),
@@ -401,7 +421,7 @@ INSERT INTO `product` (`id`, `categories_id`, `categories_name`, `sub_categories
 (121, 11, 'Veggies', 42, 'Banana', 'Fresh Banana Raw, 500g', 53, 21, 25, '368876269_Fresh Banana Raw, 500g.jpg', 'Weight	0.5 Kilograms\r\nBrand	Fresh\r\nSpecialty	rich_in_vitamins\r\nPackage Weight	0.5 Kilograms\r\nNumber of Pieces	2\r\nTemperature Condition	Fresh\r\nForm	Whole\r\nNumber of Items	1\r\nUnits	500.0 gram', 'It is rich in Vitamin B6, C, Dietary Fiber and Potassium\r\nRaw Bananas make a good choice in the making of Chips with salt and chilli powder on it\r\nCan be mashed to use as filling in vadas, samosas or cutlets\r\nStore in cool and dry place, away from direct sunlight.', 1, 'Fresh Banana Raw, 500g', 'NA', 'NA', 1, 1),
 (122, 11, 'Veggies', 43, 'Ridge Gourd', 'Fresh Ridge Gourd, 500g', 52, 41.6, 25, '941281655_Fresh Ridge Gourd, 500g.jpg', 'Diet Type	Vegetarian\r\nForm	Whole\r\nBrand	Fresh\r\nWeight	500 Grams\r\nNumber of Items	1', 'About this item\r\nIt is mildly sweet in taste\r\nRich in vitamins A, B2, and C\r\nIt also contains calcium, phosphorus and iron in small quantities\r\nStore in a cool, dry place away from sunlight\r\nmaterial_features:vegetarian', 1, 'Fresh Ridge Gourd, 500g', 'NA', 'NA', 1, 1),
 (123, 11, 'Veggies', 44, 'Betel Leaf', 'Fresh Betel Leaf Loose, 5 pcs', 20, 8, 25, '331641706_Fresh Betel Leaf Loose, 5 pcs.jpg', 'Diet Type	Vegetarian\r\nForm	Whole\r\nBrand	Fresh\r\nWeight	11 Grams\r\nNumber of Items	1', 'Betel leaf has heart shaped, soft, clean and long-stalk leaves with a pointed apex\r\nIt has vitamins such as vitamin c, riboflavin, niacin, thiamine and carotene\r\nStore in cool and dry place, away from direct sunlight', 1, 'Fresh Betel Leaf Loose, 5 pcs', 'NA', 'NA', 1, 1),
-(124, 11, 'Veggies', 45, 'Cauliflower', 'Fresh Cauliflower - Florets, 250 gm', 47, 37.6, 25, '823037325_Fresh Cauliflower - Florets, 250 gm.jpg', 'Diet Type	Vegetarian\r\nForm	With stem\r\nBrand	Fresh\r\nWeight	0.25 Kilograms\r\nNumber of Items	1', 'Cauliflower is low in fat\r\nRich in Vitamin C, K, Potassium and Manganese\r\nCan be used with Potatoes or in soups, manchurian, salad and parathas.\r\nStore in a cool, dry place away from sunlight\r\nitem_form:with stem\r\nmaterial_features:vegetarian', 1, 'Fresh Cauliflower - Florets, 250 gm', 'NA', 'NA', 1, 1);
+(124, 11, 'Veggies', 45, 'Cauliflower', 'Fresh Cauliflower - Florets, 250 gm', 47, 37.6, 24, '823037325_Fresh Cauliflower - Florets, 250 gm.jpg', 'Diet Type	Vegetarian\r\nForm	With stem\r\nBrand	Fresh\r\nWeight	0.25 Kilograms\r\nNumber of Items	1', 'Cauliflower is low in fat\r\nRich in Vitamin C, K, Potassium and Manganese\r\nCan be used with Potatoes or in soups, manchurian, salad and parathas.\r\nStore in a cool, dry place away from sunlight\r\nitem_form:with stem\r\nmaterial_features:vegetarian', 1, 'Fresh Cauliflower - Florets, 250 gm', 'NA', 'NA', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -469,10 +489,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `fname`, `lname`, `password`, `email`, `mobile`, `added_on`, `otp`, `status`) VALUES
 (744926538, 'jihfgvghrvt', 'nhegfcvebhjhg', '21232f297a57a5a743894a0e4a801fc3', 'sonai@gmail.com', '8116739132', '0000-00-00 00:00:00', '28258', ''),
 (752897876, 'jihfgvghrvt', 'nhegfcvebhjhg', '21232f297a57a5a743894a0e4a801fc3', 'admin213@gmail.com', '8116739131', '0000-00-00 00:00:00', '', ''),
-(766916802, 'soumitra', 'Halder', 'b60e7a1cc485f5cff465652c5e6d1d56', 'kingsoumitrahalder97@gmail.com', '9091561061', '2023-06-30 00:35:10', '', 'active'),
+(766916802, 'soumitra', 'Halder', '202cb962ac59075b964b07152d234b70', 'kingsoumitrahalder97@gmail.com', '9091561061', '2023-06-30 00:35:10', '', 'active'),
 (904895891, 'nbcgsvbdkjh', 'nhgfdcvgsbh', '202cb962ac59075b964b07152d234b70', 'hsoumitra4206@gmail.com', '8526987412', '2023-06-18 14:25:09', '', 'active'),
 (1193767711, 'saptarshi', 'biswas', 'b60e7a1cc485f5cff465652c5e6d1d56', 'haldersoumitra23102@gmail.com', '9091561055', '2023-06-30 15:20:12', '461679', 'inactive'),
-(1260643161, 'rohit', 'konar', 'b60e7a1cc485f5cff465652c5e6d1d56', 'hsoumitra42069@gmail.com', '8148209131', '2023-11-21 20:15:49', '', 'active'),
+(1292138937, 'SOUMITRA', 'HALDER', 'b60e7a1cc485f5cff465652c5e6d1d56', 'hsoumitra42069@gmail.com', '8670762067', '2024-08-29 11:16:21', '', 'active'),
 (1502199874, 'souvik', 'scary', '4de3fa6895c0e0a07df86fd06b07b1c7', 'www.scarysouvik7@gmail.com', '9564668526', '2023-06-30 00:58:32', '', 'active'),
 (1511699739, 'gfdhbgfcvbn', 'iuytfdsz', 'c11e1dea283e48a48987b0f03b69a48b', 'uyfg@gmail.com', '8116739138', '0000-00-00 00:00:00', '', '');
 
@@ -581,7 +601,7 @@ ALTER TABLE `admin_users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -599,13 +619,13 @@ ALTER TABLE `contact_us`
 -- AUTO_INCREMENT for table `order_detail`
 --
 ALTER TABLE `order_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `order_status`
 --
 ALTER TABLE `order_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -629,7 +649,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `wishlist`
 --
 ALTER TABLE `wishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
